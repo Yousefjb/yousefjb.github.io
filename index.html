@@ -1,236 +1,658 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yousef Balout | Software Engineer</title>
+    <meta name="description" content="Portfolio and CV of Yousef Balout, a Software Engineer with 10 years of experience.">
+    <link rel="icon" type="image/jpeg" href="IMG_4515.JPG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #111827;
+            --bg-card-hover: #1f2937;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.5);
+            --border-color: #374151;
+        }
 
-	<title>Yousef Balout | Software Engineer | yousefjb@outlook.com</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	<meta name="keywords" content="yousef balout" />
-	<meta name="description" content="Yousef Balout CV" />
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08), transparent 25%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
 
-	<link rel="stylesheet" type="text/css" href="reset-fonts-grids.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="resume.css" media="all" />
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
+        a:hover {
+            color: #60a5fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: var(--bg-card);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 2rem;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding: 5px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
+            100% { box-shadow: 0 0 25px rgba(139, 92, 246, 0.6); }
+        }
+
+        .img-wrapper {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--bg-card);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20px;
+            transform: scale(1.5);
+        }
+
+        .sidebar h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sidebar .role {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            width: 100%;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .contact-info i {
+            width: 20px;
+            color: var(--accent);
+            margin-right: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--accent-glow);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .skills-summary {
+            width: 100%;
+            text-align: left;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+
+        .skills-summary h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        /* Main Content */
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .section {
+            background-color: var(--bg-card);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            color: var(--text-primary);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.8rem;
+        }
+
+        .section-title i {
+            color: var(--accent);
+            margin-right: 0.75rem;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 0.6rem;
+            border-radius: 10px;
+        }
+
+        .about p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 1rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent) 0%, rgba(59, 130, 246, 0.1) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2.35rem;
+            top: 0.2rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            border: 3px solid var(--bg-card);
+            box-shadow: 0 0 10px var(--accent-glow);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.4);
+            box-shadow: 0 0 20px var(--accent-glow);
+            background-color: #60a5fa;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.3rem;
+            color: #fff;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.05rem;
+            color: #a5b4fc;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+        }
+
+        .timeline-content ul {
+            list-style-type: none;
+        }
+
+        .timeline-content li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.7rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .timeline-content li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .tags span {
+            background-color: rgba(255, 255, 255, 0.03);
+            color: #e2e8f0;
+            padding: 0.4rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .tags span:hover {
+            background-color: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.4);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background-color: rgba(255, 255, 255, 0.02);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            background-color: rgba(59, 130, 246, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category h3::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
+        /* Education */
+        .edu-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            padding: 1.8rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .edu-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            background-color: rgba(59, 130, 246, 0.03);
+            transform: translateX(5px);
+        }
+
+        .edu-date {
+            position: absolute;
+            top: 1.8rem;
+            right: 1.8rem;
+            font-size: 0.85rem;
+            color: var(--accent);
+            background-color: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .edu-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+            color: #fff;
+            padding-right: 120px;
+        }
+
+        .edu-card h4 {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: #a5b4fc;
+            margin-bottom: 0.8rem;
+        }
+
+        .edu-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                margin-bottom: 0;
+            }
+            
+            .edu-date {
+                position: relative;
+                top: 0;
+                right: 0;
+                display: inline-block;
+                margin-bottom: 1rem;
+            }
+            
+            .edu-card h3 {
+                padding-right: 0;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar section-anim">
+            <div class="profile-img">
+                <div class="img-wrapper">
+                    <img src="IMG_4515.JPG" alt="Yousef Balout">
+                </div>
+            </div>
+            <h1>Yousef Balout</h1>
+            <h2 class="role">Software Engineer</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Nablus - Askar, Palestine</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:yousefjb@outlook.com">yousefjb@outlook.com</a></p>
+                <p><i class="fas fa-phone"></i> +972 598 747 350</p>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Yousefjb" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/yousef-balout/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <div class="skills-summary">
+                <h3>Core Technologies</h3>
+                <div class="tags">
+                    <span>C#</span>
+                    <span>.NET</span>
+                    <span>React</span>
+                    <span>React Native</span>
+                    <span>SQL Server</span>
+                    <span>AWS</span>
+                </div>
+            </div>
+        </aside>
 
-	<div id="doc2" class="yui-t7">
-		<div id="inner">
+        <!-- Main Content -->
+        <main class="content">
+            <section class="about section section-anim">
+                <h2 class="section-title"><i class="fas fa-user-astronaut"></i> Profile</h2>
+                <p>Software Engineer with 10 years of experience in architecting and developing robust web, mobile, and desktop applications. Proven leadership in driving complex projects from conception to deployment, with a strong focus on SaaS architectures, open banking integrations, and CI/CD automation. Adept at building scalable APIs and modern user interfaces.</p>
+            </section>
 
-			<div id="hd">
-				<div class="yui-gc">
-					<div class="yui-u first">
-						<h1>Yousef Balout</h1>
-						<h2>Software Engineer</h2>
-					</div>
+            <section class="experience section section-anim">
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Feb 2023 - Current</div>
+                        <div class="timeline-content">
+                            <h3>Isra Software & Computer</h3>
+                            <h4>Software Engineer</h4>
+                            <ul>
+                                <li><strong>Cloud Architecture:</strong> Spearheaded the architectural design of the Shamel SaaS platform, ensuring high availability and scalability.</li>
+                                <li><strong>DevOps & Deployment:</strong> Streamlined release cycles by establishing robust CI/CD pipelines for seamless deployments across AWS and on-premises environments.</li>
+                                <li><strong>VoIP Solutions:</strong> Engineered a custom VoIP mobile application using React Native to facilitate direct customer-to-support communication.</li>
+                                <li><strong>Backend Middleware:</strong> Developed a sophisticated .NET proxy middleware connecting WebRTC to SIP, enabling seamless voice communications.</li>
+                                <li><strong>Remote Infrastructure:</strong> Deployed and managed RustDesk infrastructure to securely facilitate remote access capabilities.</li>
+                                <li><strong>Leadership & Mentorship:</strong> Drove technical excellence by leading code reviews, shaping architectural strategies for the Shamel web app, and providing Tier 3 technical support.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-					<div class="yui-u">
-						<div class="contact-info">
-							<h3><a href="mailto:yousefjb@outlook.com">yousefjb@outlook.com</a></h3>
-							<h3>(972) - 598 747 350</h3>
-						</div>
-						<!--// .contact-info -->
-					</div>
-				</div>
-				<!--// .yui-gc -->
-			</div>
-			<!--// hd -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Jan 2021 - Feb 2023</div>
+                        <div class="timeline-content">
+                            <h3>Kiitos Technologies</h3>
+                            <h4>Software Engineer</h4>
+                            <ul>
+                                <li><strong>Team Leadership:</strong> Directed and mentored a cross-functional agile team of 8 developers, fostering a culture of collaboration and technical excellence.</li>
+                                <li><strong>FinTech Innovation:</strong> Architected and developed a comprehensive budgeting web application, featuring deep integrations with Bud's Open Banking API and scalable AWS services.</li>
+                                <li><strong>Platform Engineering:</strong> Built an affiliate network aggregator system from the ground up, delivering a high-performance client-facing web app, a comprehensive admin dashboard, and robust REST APIs.</li>
+                                <li><strong>Ecosystem Integrations:</strong> Engineered seamless third-party integrations with PayPal, HubSpot, AWS, and over 10 different affiliate networks.</li>
+                                <li><strong>Browser Extensions:</strong> Expanded platform reach by developing and publishing feature-rich browser extensions for Google Chrome and Apple Safari.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-			<div id="bd">
-				<div id="yui-main">
-					<div class="yui-b">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">June 2016 - Dec 2020</div>
+                        <div class="timeline-content">
+                            <h3>Isra Software & Computer</h3>
+                            <h4>Software Engineer</h4>
+                            <ul>
+                                <li><strong>CRM Ecosystem:</strong> Enhanced and scaled a comprehensive CRM system, engineering complex integrations with HR, Financial, Licensing, SIP, AWS S3, and eFax services.</li>
+                                <li><strong>Mobile Engineering:</strong> Designed and launched multiple React Native applications, including a core CRM companion app and a dedicated SIP client for instant customer support.</li>
+                                <li><strong>Microservices & APIs:</strong> Developed specialized APIs for HTML/Word to PDF document conversion and a custom WhatsApp integration API leveraging physical mobile devices.</li>
+                                <li><strong>System Optimization:</strong> Significantly improved application performance by optimizing complex SQL analytic queries and refining React data table components for a high-demand financial system.</li>
+                                <li><strong>Custom Solutions:</strong> Built specialized tools including a thermal-printer compatible Android invoicing app for municipalities, a POS data synchronization tool, and a React-based subscription management dashboard.</li>
+                                <li><strong>Infrastructure & Mentorship:</strong> Administered the company's Fortigate Firewall, deployed scalable CRON jobs via AWS Lambda, and led a 3-year training program for undergraduate interns.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-						<div class="yui-gf">
-							<div class="yui-u first">
-								<h2>Profile</h2>
-							</div>
-							<div class="yui-u">
-								<p class="enlarge">
-									Jack of all trades, diverse skill set, long-term learner and a blessing for startups
-								</p>
-							</div>
-						</div>
-						<!--// .yui-gf -->
+            <section class="skills section section-anim">
+                <h2 class="section-title"><i class="fas fa-laptop-code"></i> Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming</h3>
+                        <div class="tags">
+                            <span>C#</span><span>Javascript</span><span>Java</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Web Development</h3>
+                        <div class="tags">
+                            <span>React</span><span>Material UI</span><span>HTML/CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Mobile Development</h3>
+                        <div class="tags">
+                            <span>React Native</span><span>Android</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Databases</h3>
+                        <div class="tags">
+                            <span>SQL Server</span><span>PostgreSQL</span><span>SQLite</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>OS & Ops</h3>
+                        <div class="tags">
+                            <span>Linux/Ubuntu</span><span>Windows</span><span>MacOS</span><span>AWS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Other</h3>
+                        <div class="tags">
+                            <span>vSphere</span><span>Veeam Backup</span><span>Fortigate Firewall</span><span>CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-						<div class="yui-gf">
-							<div class="yui-u first">
-								<h2>Skills</h2>
-							</div>
-							<div class="yui-u">
+            <section class="education section section-anim">
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="edu-card">
+                    <div class="edu-date">Sept 2012 - June 2016</div>
+                    <h3>Najah National University</h3>
+                    <h4>B.A. in Computer Science</h4>
+                    <p>GPA: 3.22</p>
+                </div>
+            </section>
+        </main>
+    </div>
 
-								<div class="talent">
-									<h2>Backend</h2>
-									<p>Expert in building fast, secure and maintainable API </p>
-								</div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll('.section-anim');
+            
+            // Initial styles for animation
+            elements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            });
 
-								<div class="talent">
-									<h2>Frontend</h2>
-									<p>Building usable, nice looking and precise UI </p>
-								</div>
+            // Intersection Observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target); // Animate only once
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
 
-								<div class="talent">
-									<h2>Database</h2>
-									<p>Excelent database designer, sql wizard and indices craft master</p>
-								</div>
-							</div>
-							<div class="yui-u mt1">
-
-								<div class="talent">
-									<h2>Mobile</h2>
-									<p>Very good React Native and android experience</p>
-								</div>
-
-								<div class="talent">
-									<h2>System analysis</h2>
-									<p>Convert the ideas from client to specs for developers</p>
-								</div>
-
-							</div>
-						</div>
-						<!--// .yui-gf -->
-
-						<div class="yui-gf">
-							<div class="yui-u first">
-								<h2>Technical</h2>
-							</div>
-							<div class="yui-u">
-								<ul class="talent">
-									<li>HTML</li>
-									<li>CSS</li>
-									<li>Javascript</li>
-									<li>React</li>
-									<li class="last">React Native</li>
-								</ul>
-
-								<ul class="talent">
-									<li>C#</li>
-									<li>Java</li>
-									<li>SQL</li>
-									<li>Sql Server</li>
-									<li class="last">Mysql</li>
-								</ul>
-
-								<ul class="talent">
-									<li>.Net Core</li>
-									<li>Android</li>
-									<li>XCode</li>
-									<li>Asterisk + SIP</li>
-									<li class="last">Linux</li>
-								</ul>
-							</div>
-						</div>
-						<!--// .yui-gf-->
-
-						<div class="yui-gf">
-
-							<div class="yui-u first">
-								<h2>Experience (7 Years)</h2>
-							</div>
-							<!--// .yui-u -->
-
-							<div class="yui-u">
-
-								<div class="job last">
-									<h2>Isra Software & Computer</h2>
-									<h3>Software Engineer</h3>
-									<h4>2014-Present</h4>
-									<p>I built a very diverse skills while working in this job and some of the projects
-										include</p>
-									<ul>
-										<div>
-											<li>Shamel Mobile Municipalities</li>
-											<p>android application used to create and print invoices on thermal printers
-												with integration with Shamel Financial
-												<br />
-												<b>Tech:</b> java, sqlite, C# .net
-											</p>
-										</div>
-										<div>
-											<li>POS Sync</li>
-											<p>windows application and windows service that sync data between pos
-												branches
-												in order to convert stand alone application to centralized system
-												<br />
-												<b>Tech:</b> C#, SQL
-											</p>
-										</div>
-										<div>
-											<li>Customer Management System</li>
-											<p>Maintain and develop windows application that used to run and automate
-												everyday job of employees in Isra Co
-												<br />
-												<b>Tech:</b> C#, SQL, NodeJs, Windows Forms, React, Asterisk, MSSQL,
-												HTML,
-												CSS, JS
-											</p>
-										</div>
-										<div>
-											<li>Palestinian General Federation of Trade Unions</li>
-											<p>Web application used to manage subscriptions for union members
-												<br />
-												<b>Tech:</b> C#, .Net Core, React, Mysql
-											</p>
-										</div>
-										<div>
-											<li>CRM Mobile</li>
-											<p>The cross platform mobile version of Isra Co management system
-												<br />
-												<b>Tech:</b> C#, .Net Core, React, React Native
-											</p>
-										</div>
-										<div>
-											<li>Customer Communication Platform</li>
-											<p>A cross platform SIP VOIP application used to allow customers to call
-												support
-												and sales where calls transfared from call center to another while being
-												transparent
-												<br />
-												<b>Tech:</b> C#, .Net Core, React Native, PjSIP, Asterisk
-											</p>
-										</div>
-									</ul>
-								</div>
-
-							</div>
-							<!--// .yui-u -->
-						</div>
-						<!--// .yui-gf -->
-
-
-						<div class="yui-gf last">
-							<div class="yui-u first">
-								<h2>Education</h2>
-							</div>
-							<div class="yui-u">
-								<h2>Najah National University - Nablus, Palestine</h2>
-								<h3>Computer Science &mdash; <strong>3.25 GPA</strong> </h3>
-							</div>
-						</div>
-						<!--// .yui-gf -->
-
-
-					</div>
-					<!--// .yui-b -->
-				</div>
-				<!--// yui-main -->
-			</div>
-			<!--// bd -->
-
-			<div id="ft">
-				<p>Yousef Balout &mdash; <a href="mailto:yousefjb@outlook.com">yousefjb@outlook.com</a> &mdash; (972) -
-					598 747 350</p>
-			</div>
-			<!--// footer -->
-
-		</div><!-- // inner -->
-
-
-	</div>
-	<!--// doc -->
-
-
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
-
 </html>
