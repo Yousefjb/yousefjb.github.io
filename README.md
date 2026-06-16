@@ -2,7 +2,7 @@
 
 **Software Engineer | 10 Years of Experience**
 
-I am a passionate and experienced Software Engineer based in Nablus, Palestine. I specialize in architecting and developing robust web, mobile, and desktop applications. With a strong focus on SaaS architectures, open banking integrations, and CI/CD automation, I have a proven track record of driving complex projects from conception to deployment.
+I am a Software Engineer based in Nablus, Palestine. I have 10 years of experience building web, mobile, and desktop applications. My background includes working with SaaS architectures, open banking integrations, and CI/CD automation.
 
 ---
 
@@ -18,10 +18,10 @@ You can view my live portfolio and CV here: **[yousefjb.github.io](https://youse
 - **Other**: .NET, Linux, MacOS, Fortigate Firewalls
 
 ### 💼 Experience Highlights
-- **SaaS & Cloud:** Architected Shamel SaaS and automated CI/CD deployments on AWS and on-premises.
-- **Fintech & Integration:** Integrated open banking providers (Bud) and built affiliated network aggregator systems.
-- **Mobile & VoIP:** Developed robust React Native apps, including VOIP and SIP clients to empower CRM systems.
-- **Leadership:** Led agile development teams of up to 8 developers and provided ongoing mentorship and training.
+- **SaaS & Cloud:** Designed the architecture for Shamel SaaS and built CI/CD pipelines for AWS and on-premises deployments.
+- **Fintech & Integration:** Integrated Bud's Open Banking API and developed an affiliate network aggregator system.
+- **Mobile & VoIP:** Built React Native mobile apps, including VoIP and SIP clients for a CRM system.
+- **Team Leadership:** Led an agile team of 8 developers.
 
 ### 📫 Let's Connect
 - **LinkedIn**: [linkedin.com/in/yousef-balout](https://www.linkedin.com/in/yousef-balout/)
